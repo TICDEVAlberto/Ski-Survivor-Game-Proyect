@@ -1,0 +1,58 @@
+#board {
+    height: 900px;
+    width: 800px;
+    background-color: black;
+    position: relative;
+}
+
+#player {
+
+    height: 20px;
+    width: 20px;
+    background-color: red;
+    position: absolute;
+    display: flex;
+    left: 390px;
+    top: 250px;
+}
+
+#enemy1 {
+
+    height: 25px;
+    width: 25px;
+    background-color: green;
+    position: absolute;
+    display: flex;
+    left: 390px;
+    top: 700px;
+
+}
+
+
+
+#enemy2 {
+    
+    height: 25px;
+    width: 25px;
+    background-color: green;
+    position: absolute;
+    display: flex;
+    left: 150px;
+    top: 500px;
+
+}
+
+
+#enemy3 {
+    
+    height: 25px;
+    width: 25px;
+    background-color: green;
+    position: absolute;
+    display: flex;
+    left: 650px;
+    top: 600px;
+
+}
+
+
