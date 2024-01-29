@@ -15,6 +15,11 @@ window.addEventListener('keydown', function(e) {
        xPlayer += 10;
         player.style.left = xPlayer + "px";
     }
+
+    if (e.key === "a") {
+        xPlayer -= 10;
+         player.style.left = xPlayer + "px";
+     }
 }) 
 
 
