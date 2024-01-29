@@ -30,29 +30,4 @@
 
 
 
-#enemy2 {
-    
-    height: 25px;
-    width: 25px;
-    background-color: green;
-    position: absolute;
-    display: flex;
-    left: 150px;
-    top: 500px;
-
-}
-
-
-#enemy3 {
-    
-    height: 25px;
-    width: 25px;
-    background-color: green;
-    position: absolute;
-    display: flex;
-    left: 650px;
-    top: 600px;
-
-}
-
 

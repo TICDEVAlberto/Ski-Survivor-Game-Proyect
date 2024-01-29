@@ -1,11 +1,13 @@
+
+
 const board = document.getElementById("board");
 const player = document.getElementById("player")
 const enemy1 = document.getElementById("enemy1")
-const enemy2 = document.getElementById("enemy2")
-const enemy3 = document.getElementById("enemy3")
 
 
+// var enemy = new Enemy()
 var xPlayer = 390
+var yEnemy = 780
 var playerDirection = 1
 
 function movement(playerDirection){ 
@@ -28,6 +30,11 @@ window.addEventListener('keydown', function(e) {
      }
 }) 
 
+function enemyMove(){
+    yEnemy -= 10
+    enemy1.style.top = yEnemy + "px"
+}
+setInterval(enemyMove, 3000)
 // //function checkCollision(){
   
 //     //if (xPlayer <= 10 || xPlayer >= 780) {
