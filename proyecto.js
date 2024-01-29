@@ -1,19 +1,32 @@
+
+
 const board = document.getElementById("board");
 const player = document.getElementById("player")
 const enemy1 = document.getElementById("enemy1")
-const enemy2 = document.getElementById("enemy2")
-const enemy3 = document.getElementById("enemy3")
 
 
+// var enemy = new Enemy()
 var xPlayer = 390
+var yPlayer = 250
+var yEnemy = 700
+var xEnemy = 390
 var playerDirection = 1
+
 
 function movement(playerDirection){ 
        xPlayer += 10 * playerDirection;
         player.style.left = xPlayer + "px";
+        
     }
     
-
+    function enemyMove(){
+        checkCollision()
+        yEnemy -= 10
+        enemy1.style.top = yEnemy + "px"
+        
+    }
+    var enemyID = setInterval(enemyMove, 100);
+    
 
 window.addEventListener('keydown', function(e) {  
   
@@ -28,13 +41,23 @@ window.addEventListener('keydown', function(e) {
      }
 }) 
 
-// //function checkCollision(){
-  
-//     //if (xPlayer <= 10 || xPlayer >= 780) {
-//         //playerDirection = -1 
-//         return true
-//     } else { return false}
-// }
+    
+    function checkCollision(){ 
+    if ( xPlayer <= xEnemy + 25 &&
+    yPlayer <= yEnemy + 25  &&
+    xPlayer + 25  >= xEnemy &&
+    yPlayer + 25 >= yEnemy) {
+        clearInterval (enemyID)
+        window.alert('Game Over')
+    
+}
+ }
+
+
+
+
+
+
 
 
 
