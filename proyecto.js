@@ -26,6 +26,7 @@ function movement(playerDirection){
         
     }
     var enemyID = setInterval(enemyMove, 100);
+    
 
 window.addEventListener('keydown', function(e) {  
   
@@ -46,9 +47,11 @@ window.addEventListener('keydown', function(e) {
     yPlayer <= yEnemy + 25  &&
     xPlayer + 25  >= xEnemy &&
     yPlayer + 25 >= yEnemy) {
-    return true
-    } else {return false}
+        clearInterval (enemyID)
+        window.alert('Game Over')
+    
 }
+ }
 
 
 
