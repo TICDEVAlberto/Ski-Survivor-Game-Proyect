@@ -1,7 +1,20 @@
 const board = document.getElementById("board");
 const player = document.getElementById("player")
-const enemy1 = documen.getElementById("enemy1")
-const enemy2 = documen.getElementById("enemy2")
-const enemy3 = documen.getElementById("enemy3")
+const enemy1 = document.getElementById("enemy1")
+const enemy2 = document.getElementById("enemy2")
+const enemy3 = document.getElementById("enemy3")
 
-player.addEventListener('keydown', function()) 
+
+var xPlayer = 390
+var playerDirection = 1
+
+window.addEventListener('keydown', function(e) {
+    console.log("hola")
+    //var playerRight = xPlayer;
+    if (e.key === "d") {
+       xPlayer += 10;
+        player.style.left = xPlayer + "px";
+    }
+}) 
+
+
