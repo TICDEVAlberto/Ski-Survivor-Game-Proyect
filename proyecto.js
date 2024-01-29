@@ -1,5 +1,3 @@
-
-
 const board = document.getElementById("board");
 const player = document.getElementById("player")
 const enemy1 = document.getElementById("enemy1")
@@ -52,7 +50,6 @@ window.addEventListener('keydown', function(e) {
     
 }
  }
-
 
 
 
