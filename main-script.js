@@ -28,10 +28,19 @@ window.addEventListener('keydown', function(e) {
         case "a":
         player.direction = -1
         break
+        case "ArrowLeft":
+        player.direction = -1
+        break
+
         case "d":
         player.direction = 1
         break
+        case "ArrowRight":
+        player.direction = 1
+        break
     }
+
+    console.log(e)
 })
 
 window.addEventListener('keyup', function() {

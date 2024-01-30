@@ -23,6 +23,10 @@ function Player(x, y, parent) {
             self.sprite.style.left = self.x + "px" 
         }
     };
+
+    this.jump = function() {
+        
+    }
 }
 
 export { Player };
