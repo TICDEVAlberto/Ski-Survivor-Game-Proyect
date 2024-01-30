@@ -47,25 +47,30 @@ function playerAlive() {
 window.addEventListener('keydown', function(e) {
  switch (e.key)  {
         case "a":
-        player.direction = -1
+            player.direction = -1
         break
         case "ArrowLeft":
-        player.direction = -1
+            player.direction = -1
         break
 
         case "d":
-        player.direction = 1
+            player.direction = 1
         break
         case "ArrowRight":
-        player.direction = 1
+            player.direction = 1
         break
-    }
 
-    console.log(e)
+        case " ":
+            player.jump()
+    }
 })
 
 window.addEventListener('keyup', function() {
     player.direction = 0
+})
+
+window.addEventListener("keyup", function(e) {
+
 })
  
 main()
