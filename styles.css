@@ -1,9 +1,11 @@
-#board {
+#ski_pista {
     height: 900px;
     width: 800px;
-    background-color: black;
     position: relative;
+    background-image: url("images/fondo editado2.jpg");
+    background-position-y: -150px;
 }
+
 #player {
 
     height: 25px;
@@ -15,7 +17,7 @@
     top: 250px;
 }
 
-.enemy {
+.obstacles {
 
     height: 25px;
     width: 25px;
