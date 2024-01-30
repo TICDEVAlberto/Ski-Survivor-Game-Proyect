@@ -15,7 +15,7 @@ var obstacles = []
 function main() {
     player.addPlayer()
     playerId = setInterval(playerAlive, 50)
-    enemyId = setInterval(createObstacle, 3000)
+    enemyId = setInterval(createObstacle, 1000)
 }
 
 

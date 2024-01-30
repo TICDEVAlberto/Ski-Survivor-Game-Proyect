@@ -28,13 +28,15 @@
 }
 
 #player {
-    height: 25px;
-    width: 25px;
-    background-color: red;
+    height: 75px;
+    width: 50px;
     position: absolute;
     display: flex;
     left: 390px;
     top: 250px;
+    background-image: url("images/playerskiderecha.png");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .obstacles {
