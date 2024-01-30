@@ -3,6 +3,9 @@
     width: 800px;
     background-color: black;
     position: relative;
+    background-image: url("fondo\ editado2.jpg");
+    background-position-y: -150px;
+
 }
 
 #player {
