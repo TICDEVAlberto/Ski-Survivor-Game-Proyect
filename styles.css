@@ -16,17 +16,38 @@
     background-position-y: -150px;
     background-size: cover;
 }
-
+/* 
 .imagen-superpuesta {
     position: absolute;
     width: 100%;
     height: 100%;
     background-image: url("images/trasparecia textura nievepng.png");
-    background-position-y: 350px;
+    background-position-y: 167px;
     background-size: contain;
     background-repeat: no-repeat;
+} */
+/* /////////////////////////////////////////////////////// */
+.imagen-superpuesta {
+    position: absolute;
+    top: 100%; /* Inicialmente coloca la imagen fuera del contenedor */
+    left: 0; 
+    width: 300%;
+    height: 300%;
+    background-image: url('images/trasparecia textura nievepng.png');
+    background-position-y: 167px;
+    background-size: contain;
+    animation: moverArriba 2s infinite linear; /* Animación para mover hacia arriba durante 5 segundos, repitiéndose infinitamente */
 }
 
+@keyframes moverArriba {
+    from {
+        top: 70%; /* Comienza fuera del contenedor */
+    }
+    to {
+        top: 30%; /* Termina arriba del contenedor */
+    }
+}
+/* ////////////////////////////////////////////////////////////// */
 #player {
     height: 75px;
     width: 50px;
