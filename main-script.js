@@ -45,20 +45,18 @@ function playerAlive() {
 }
 
 window.addEventListener('keydown', function(e) {
- switch (e.key)  {
+    switch (e.key) {
         case "a":
-        player.direction = -1
-        break
         case "ArrowLeft":
-        player.direction = -1
-        break
-
+            player.direction = -1;
+            player.sprite.style.backgroundImage = "url('images/playerskiizquierda.png')";
+            break;
         case "d":
-        player.direction = 1
-        break
         case "ArrowRight":
-        player.direction = 1
-        break
+            player.direction = 1;
+            player.sprite.style.backgroundImage = "url('images/playerskiderecha.png')";
+
+            break;
     }
 
     console.log(e)

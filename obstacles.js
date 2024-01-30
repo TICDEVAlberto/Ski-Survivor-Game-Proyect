@@ -23,7 +23,7 @@ function Obstacles(x, y, parent, player, array) {
             self.y = newY;
             self.sprite.style.top = self.y + "px" 
         }
-        if (self.y <= 190) {
+        if (self.y <= 90) {
             parent.removeChild(self.sprite)
             clearInterval(self.timerId)
             array.shift()

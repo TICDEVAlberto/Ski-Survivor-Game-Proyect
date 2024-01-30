@@ -39,6 +39,8 @@
     background-repeat: no-repeat;
 }
 
+.playerRight { }
+
 .obstacles {
     height: 25px;
     width: 25px;
