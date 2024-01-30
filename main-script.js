@@ -1,10 +1,10 @@
 // IMPORTS
 import { Player } from "./player.js";
-import { Obstacle } from "./obstacles.js";
+import { Obstacles } from "./obstacles.js";
 
 
 // Const and variables
-const ski_pista = document.querySelector("#ski_pista")
+var ski_pista = document.querySelector("#ski_pista")
 var player = new Player (390, 250, ski_pista)
 
 
@@ -19,16 +19,16 @@ function main() {
 // Functions
 
 function createObstacle() {
-    var enemy = new Obstacle (390, 750, ski_pista, player)
-    enemy.addObstacle()
+    var obstacle = new Obstacles(390, 750, ski_pista, player)
+    obstacle.addObstacle()
 }
 
 window.addEventListener('keydown', function(e) {
  switch (e.key)  {
-        case "a" || "left":
-        player.direction =-1
+        case "a":
+        player.direction = -1
         break
-        case "d" || "right":
+        case "d":
         player.direction = 1
         break
     }

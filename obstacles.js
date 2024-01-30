@@ -9,16 +9,11 @@ function Obstacles(x, y, parent, player) {
     this.speed = 10
  
     this.addObstacle = function() {
-        this.sprite.setAttribute('class', 'enemy')
+        this.sprite.setAttribute('class', 'obstacles')
         this.sprite.style.left = this.x + "px"
         this.sprite.style.top = this.y + "px"
         parent.appendChild(this.sprite)
     }
-
-    // this.createObstacle = function() {
-    //     var enemy = new Obstacle (390, 750, board, player)
-    //     enemy.addObstacle()
-    // }
     
     this.moveObstacle = function() {
         self.checkCollision()
@@ -43,7 +38,7 @@ function Obstacles(x, y, parent, player) {
         }
     }
 
-    this.timerId = setInterval(this.move, 50)
+    this.timerId = setInterval(this.moveObstacle, 50)
 }
 
 export { Obstacles };
