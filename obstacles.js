@@ -1,4 +1,4 @@
-function Obstacles(x, y, parent, player) {
+function Obstacles(x, y, parent, player, array) {
     var self = this;
     this.x = x;
     this.y = y;
@@ -10,6 +10,7 @@ function Obstacles(x, y, parent, player) {
  
     this.addObstacle = function() {
         this.sprite.setAttribute('class', 'obstacles')
+        this.sprite.setAttribute('id', 'arbol')
         this.sprite.style.left = this.x + "px"
         this.sprite.style.top = this.y + "px"
         parent.appendChild(this.sprite)
@@ -22,9 +23,10 @@ function Obstacles(x, y, parent, player) {
             self.y = newY;
             self.sprite.style.top = self.y + "px" 
         }
-        if (self.y <= 200) {
+        if (self.y <= 190) {
             parent.removeChild(self.sprite)
             clearInterval(self.timerId)
+            array.shift()
         }
     };
 
@@ -34,6 +36,7 @@ function Obstacles(x, y, parent, player) {
         this.x + this.width > player.x && 
         this.y + this.height > player.y) 
         {
+            player.dead = true
             window.alert("CRASHED!")
         }
     }

@@ -2,8 +2,29 @@
     height: 900px;
     width: 800px;
     position: relative;
+    /* background-image: url("images/fondo editado2.jpg");
+    background-position-y: -150px; */
+}
+
+.imagen-fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url("images/fondo editado2.jpg");
     background-position-y: -150px;
+    background-size: cover;
+}
+
+.imagen-superpuesta {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("images/trasparecia textura nievepng.png");
+    background-position-y: 350px;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #player {
@@ -19,9 +40,23 @@
 .obstacles {
     height: 25px;
     width: 25px;
-    background-color: green;
     position: absolute;
     display: flex;
     left: 390px;
     top: 850px;
 }
+
+#arbol {
+    height: 100px;
+    width: 85px;
+    position: absolute;
+    display: flex;
+    justify-content: left;
+    left: 390px;
+    top: 700px;
+    background-image: url("images/pino.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+
