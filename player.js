@@ -9,7 +9,7 @@ function Player(x, y, parent) {
     this.speed = 10
     this.dead = false
     this.zIndex = this.sprite.style.zIndex
-    this.isJumping
+
  
     this.addPlayer = function() {
         this.sprite.setAttribute('id', 'player')
