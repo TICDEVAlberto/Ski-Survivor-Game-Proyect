@@ -1,25 +1,32 @@
 // IMPORTS
 import { Player } from "./player.js";
 import { Obstacles } from "./obstacles.js";
+//import { Snow } from "./snow.js";
 
 // Const and variables
 var ski_pista = document.querySelector("#ski_pista")
 var player = new Player (390, 250, ski_pista)
 var playerId = null
-var barrierId = null 
 var obstacleId = null
 var obstacles = []
+var snowId = null
 
 
 // main function
 function main() {
     player.addPlayer()
     playerId = setInterval(playerAlive, 50)
-    enemyId = setInterval(createObstacle, 1000)
+    obstacleId = setInterval(createObstacle, 1000)
+    //snowId = setInterval(createSnow, 1000)
 }
 
 
 // Functions
+
+let refresh = document.getElementById("reset");
+refresh.addEventListener('click', _ => {
+            location.reload();
+})
 
 function createObstacle() {
     // var obstacle = new Obstacles(390, 750, ski_pista, player)
@@ -59,7 +66,7 @@ window.addEventListener('keydown', function(e) {
             break;
       }
     }
-})
+)
 
 window.addEventListener('keyup', function() {
     player.direction = 0

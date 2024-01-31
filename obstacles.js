@@ -8,6 +8,7 @@ function Obstacles(x, y, parent, player, array) {
     this.direction = -1;
     this.speed = 10
     this.zIndex = this.sprite.style.zIndex
+
  
     this.addObstacle = function() {
         this.sprite.setAttribute('class', 'obstacles')
@@ -38,7 +39,8 @@ function Obstacles(x, y, parent, player, array) {
         this.y + this.height > player.y && this.zIndex === player.zIndex) 
         {
             player.dead = true
-            window.alert("CRASHED!")
+            document.querySelector("#gameOver").style.visibility = "visible"
+           
         }
     }
 
