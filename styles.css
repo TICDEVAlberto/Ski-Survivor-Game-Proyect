@@ -29,24 +29,47 @@
 /* /////////////////////////////////////////////////////// */
 .imagen-superpuesta {
     position: absolute;
-    top: 100%; /* Inicialmente coloca la imagen fuera del contenedor */
-    left: 0; 
-    width: 300%;
-    height: 300%;
-    background-image: url('images/trasparecia textura nievepng.png');
-    background-position-y: 167px;
+    /* top: 100%; Inicialmente coloca la imagen fuera del contenedor */
+    /* left: 0;  */
+    height: 5000px;
+    width: 800px;
+    background-image: url('images/textura nievepng.png');
+    background-position-y: 60px;
     background-size: contain;
-    animation: moverArriba 2s infinite linear; /* Animación para mover hacia arriba durante 5 segundos, repitiéndose infinitamente */
+    /* background-repeat: repeat-y; */
+    background-repeat: no-repeat;
+    
+    animation: moverArriba 2s infinite linear; 
+    animation-fill-mode: forwards;
+    /* Animación para mover hacia arriba durante 2 segundos, repitiéndose infinitamente */
 }
 
 @keyframes moverArriba {
     from {
-        top: 70%; /* Comienza fuera del contenedor */
+        top: 85%; /* Comienza fuera del contenedor */
     }
     to {
-        top: 30%; /* Termina arriba del contenedor */
+        top: 15%; /* Termina arriba del contenedor */
     }
 }
+
+.imagen-superpuesta2 {
+    position: absolute;
+    /* top: 100%; Inicialmente coloca la imagen fuera del contenedor */
+    /* left: 0;  */
+    height: 5000px;
+    width: 800px;
+    background-image: url('images/textura nievepng.png');
+    background-position-y: 360px;
+    background-size: contain;
+    /* background-repeat: repeat-y; */
+    background-repeat: no-repeat;
+    
+    animation: moverArriba 2s infinite linear; 
+    animation-fill-mode: forwards;
+    /* Animación para mover hacia arriba durante 2 segundos, repitiéndose infinitamente */
+}
+
 /* ////////////////////////////////////////////////////////////// */
 #player {
     height: 75px;
