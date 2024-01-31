@@ -1,7 +1,7 @@
 // IMPORTS
 import { Player } from "./player.js";
 import { Obstacles } from "./obstacles.js";
-//import { Snow } from "./snow.js";
+
 
 // Const and variables
 var ski_pista = document.querySelector("#ski_pista")
@@ -9,7 +9,6 @@ var player = new Player (390, 250, ski_pista)
 var playerId = null
 var obstacleId = null
 var obstacles = []
-
 
 
 // main function
@@ -21,18 +20,9 @@ function main() {
 
 
 // Functions
-
-let refresh = document.getElementById("reset");
-refresh.addEventListener('click', _ => {
-            location.reload();
-})
-
 function createObstacle() {
-    // var obstacle = new Obstacles(390, 750, ski_pista, player)
-    // obstacle.addObstacle()
     var coord = Math.floor(Math.random() *30) *25
     var obstacle = new Obstacles (coord, 750, ski_pista, player, obstacles)
-    // console.log(coord)
     obstacle.addObstacle()
     obstacles.push(obstacle)
 }
@@ -50,6 +40,17 @@ function playerAlive() {
     }
 }
 
+let gameStart = document.getElementById("start-boton");
+window.addEventListener('click', _ => {
+    document.querySelector("#start").style.visibility = "hidden"
+    main()
+})
+
+let refresh = document.getElementById("reset");
+refresh.addEventListener('click', _ => {
+            location.reload();
+})
+
 window.addEventListener('keydown', function(e) {
     switch (e.key) {
         case "a":
@@ -61,7 +62,6 @@ window.addEventListener('keydown', function(e) {
         case "ArrowRight":
             player.direction = 1;
             player.sprite.style.backgroundImage = "url('images/playerskiderecha.png')";
-
             break;
       }
     }
@@ -70,5 +70,3 @@ window.addEventListener('keydown', function(e) {
 window.addEventListener('keyup', function() {
     player.direction = 0
 })
- 
-main()

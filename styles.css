@@ -19,20 +19,13 @@ body {
         height: 100%;
         border: 25px solid red;
         z-index: 3;
-        
-    }
+}
 
 #ski_pista {
     height: 900px;
     width: 800px;
     position: relative;
-    /* background-image: url("images/fondo editado2.jpg");
-    background-position-y: -150px; */
 }
-
-
-
-
 
 .imagen-fondo {
     position: absolute;
@@ -49,14 +42,12 @@ body {
 
 .imagen-superpuesta {
     position: absolute;
-    height: 5000px;
+    height: 900px;
     width: 800px;
     background-image: url('images/gifsnow-rotate.gif');
     background-position-y: 60px;
     background-size: contain;
-    background-repeat: repeat-y;
     z-index: 1;
-
  } 
 
 
@@ -72,19 +63,6 @@ body {
     background-repeat: no-repeat;
     z-index: 1;
 }
-
-
-
-
-
-/* .obstacles {
-    height: 25px;
-    width: 25px;
-    position: absolute;
-    display: flex;
-    left: 390px;
-    top: 850px;
-} */
 
 #arbol {
     height: 110px;
@@ -102,15 +80,6 @@ body {
 }
 
 
-#barrier {
-    height: 15px;
-    width: 800px;
-    position: absolute;
-    display: flex;
-    top: 250px;
-    background-color: black;
-}
-
 .boton {
         background-color: red; 
         display: flex; 
@@ -121,6 +90,34 @@ body {
         font-size: 16px;
         margin-top: 215px;
         border-radius: 65%;
-       
-      }
+}
+
+#start {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    visibility:visible;
+    position: absolute;
+    background-image: url(./images/botonstart.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 50%;
+    height: 100%;
+    border: 25px solid green;
+    z-index: 3;
+}
+
+#start-boton{
+    background-color: green;
+    display: flex; 
+    align-items:end;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 215px;
+    border-radius: 65%;
+}
 
