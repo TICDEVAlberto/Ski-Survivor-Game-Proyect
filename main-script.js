@@ -2,12 +2,13 @@
 import { Player } from "./player.js";
 import { Obstacles } from "./obstacles.js";
 
+
 // Const and variables
 var ski_pista = document.querySelector("#ski_pista")
 var player = new Player (390, 250, ski_pista)
 var playerId = null
-var barrierId = null 
 var obstacleId = null
+var scoreId = null
 var obstacles = []
 
 
@@ -16,17 +17,20 @@ function main() {
     player.addPlayer()
     playerId = setInterval(playerAlive, 50)
     obstacleId = setInterval(createObstacle, 1000)
+    scoreId = setInterval(addScore, 1000)
 }
 
 
 // Functions
 
+function addScore() {
+    player.score += 1
+    console.log(player.score)
+}
+
 function createObstacle() {
-    // var obstacle = new Obstacles(390, 750, ski_pista, player)
-    // obstacle.addObstacle()
     var coord = Math.floor(Math.random() *30) *25
     var obstacle = new Obstacles (coord, 750, ski_pista, player, obstacles)
-    // console.log(coord)
     obstacle.addObstacle()
     obstacles.push(obstacle)
 }
@@ -45,21 +49,22 @@ function playerAlive() {
 }
 
 window.addEventListener('keydown', function(e) {
-    switch (e.key) {
+ switch (e.key)  {
         case "a":
+            player.direction = -1
+        break
         case "ArrowLeft":
-            player.direction = -1;
-            player.sprite.style.backgroundImage = "url('images/playerskiizquierda.png')";
-            break;
-        case "d":
-        case "ArrowRight":
-            player.direction = 1;
-            player.sprite.style.backgroundImage = "url('images/playerskiderecha.png')";
+            player.direction = -1
+        break
 
-            break;
-      }
+        case "d":
+            player.direction = 1
+        break
+        case "ArrowRight":
+            player.direction = 1
+        break
     }
-)
+})
 
 window.addEventListener('keyup', function() {
     player.direction = 0
