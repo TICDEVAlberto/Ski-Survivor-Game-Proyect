@@ -1,3 +1,23 @@
+body {
+    position: relative;
+}
+
+#gameOver{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+        position: absolute;
+        background-image: url(./img/OIG2.jpeg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        width: 100vw;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+    }
+
 #ski_pista {
     height: 900px;
     width: 800px;
@@ -84,6 +104,8 @@
     z-index: 1;
 }
 
+
+
 .obstacles {
     height: 25px;
     width: 25px;
@@ -108,3 +130,12 @@
 
 }
 
+
+#barrier {
+    height: 15px;
+    width: 800px;
+    position: absolute;
+    display: flex;
+    top: 250px;
+    background-color: black;
+}
