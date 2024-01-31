@@ -9,7 +9,7 @@ var player = new Player (390, 250, ski_pista)
 var playerId = null
 var obstacleId = null
 var obstacles = []
-var snowId = null
+
 
 
 // main function
