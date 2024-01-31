@@ -3,11 +3,13 @@ import { Player } from "./player.js";
 import { Obstacles } from "./obstacles.js";
 
 
+
 // Const and variables
 var ski_pista = document.querySelector("#ski_pista")
 var player = new Player (390, 250, ski_pista)
 var playerId = null
 var obstacleId = null
+var scoreId = null
 var obstacles = []
 
 
@@ -16,6 +18,7 @@ function main() {
     player.addPlayer()
     playerId = setInterval(playerAlive, 50)
     obstacleId = setInterval(createObstacle, 1000)
+    scoreId = setInterval(addScore, 1000)
 }
 
 
@@ -35,33 +38,27 @@ function playerAlive() {
         clearInterval(obstacleId)
         obstacles.forEach(function(obstacle) {
             clearInterval(obstacle.timerId)
-            
+            checkScore()
         })
     }
 }
 
-let gameStart = document.getElementById("start-boton");
-window.addEventListener('click', _ => {
-    document.querySelector("#start").style.visibility = "hidden"
-    main()
-})
-
-let refresh = document.getElementById("reset");
-refresh.addEventListener('click', _ => {
-            location.reload();
-})
-
 window.addEventListener('keydown', function(e) {
-    switch (e.key) {
+ switch (e.key)  {
         case "a":
+            player.direction = -1
+        break
         case "ArrowLeft":
-            player.direction = -1;
-            player.sprite.style.backgroundImage = "url('images/playerskiizquierda.png')";
-            break;
+            player.direction = -1
+        break
+
         case "d":
+            player.direction = 1
+        break
         case "ArrowRight":
             player.direction = 1;
             player.sprite.style.backgroundImage = "url('images/playerskiderecha.png')";
+
             break;
       }
     }
