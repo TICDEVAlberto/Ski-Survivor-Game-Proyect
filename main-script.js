@@ -2,11 +2,11 @@
 import { Player } from "./player.js";
 import { Obstacles } from "./obstacles.js";
 
-
 // Const and variables
 var ski_pista = document.querySelector("#ski_pista")
 var player = new Player (390, 250, ski_pista)
 var playerId = null
+var barrierId = null 
 var obstacleId = null
 var obstacles = []
 
