@@ -1,3 +1,4 @@
+
 function Obstacles(x, y, parent, player, array) {
     var self = this;
     this.x = x;

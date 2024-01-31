@@ -8,7 +8,6 @@ function Player(x, y, parent) {
     this.direction = 0;
     this.speed = 10
     this.dead = false
-    this.score = 0
  
     this.addPlayer = function() {
         this.sprite.setAttribute('id', 'player')
