@@ -57,9 +57,8 @@ window.addEventListener('keydown', function(e) {
             player.sprite.style.backgroundImage = "url('images/playerskiderecha.png')";
 
             break;
+      }
     }
-
-    console.log(e)
 })
 
 window.addEventListener('keyup', function() {

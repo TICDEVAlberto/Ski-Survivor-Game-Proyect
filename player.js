@@ -8,6 +8,7 @@ function Player(x, y, parent) {
     this.direction = 0;
     this.speed = 10
     this.dead = false
+    this.zIndex = this.sprite.style.zIndex
  
     this.addPlayer = function() {
         this.sprite.setAttribute('id', 'player')
@@ -25,7 +26,9 @@ function Player(x, y, parent) {
     };
 
     this.jump = function() {
-        
+        this.sprite.style.zIndex = 1
+        setTimeout(5000)
+        this.sprite.style.zIndex = 2
     }
 }
 

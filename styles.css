@@ -57,6 +57,7 @@ body {
     background-image: url("images/playerskiderecha.png");
     background-size: contain;
     background-repeat: no-repeat;
+    z-index: 1;
 }
 
 
@@ -81,6 +82,7 @@ body {
     background-image: url("images/pino.png");
     background-size: contain;
     background-repeat: no-repeat;
+    z-index: 1;
 
 }
 
