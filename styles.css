@@ -1,3 +1,23 @@
+body {
+    position: relative;
+}
+
+#gameOver{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        visibility: hidden;
+        position: absolute;
+        background-image: url(./img/OIG2.jpeg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        width: 100vw;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+    }
+
 #ski_pista {
     height: 900px;
     width: 800px;
@@ -16,17 +36,61 @@
     background-position-y: -150px;
     background-size: cover;
 }
-
+/* 
 .imagen-superpuesta {
     position: absolute;
     width: 100%;
     height: 100%;
     background-image: url("images/trasparecia textura nievepng.png");
-    background-position-y: 350px;
+    background-position-y: 167px;
     background-size: contain;
     background-repeat: no-repeat;
+} */
+/* /////////////////////////////////////////////////////// */
+.imagen-superpuesta {
+    position: absolute;
+    /* top: 100%; Inicialmente coloca la imagen fuera del contenedor */
+    /* left: 0;  */
+    height: 5000px;
+    width: 800px;
+    background-image: url('images/textura nievepng.png');
+    background-position-y: 60px;
+    background-size: contain;
+    /* background-repeat: repeat-y; */
+    background-repeat: no-repeat;
+    
+    animation: moverArriba 2s infinite linear; 
+    animation-fill-mode: forwards;
+    /* Animación para mover hacia arriba durante 2 segundos, repitiéndose infinitamente */
 }
 
+@keyframes moverArriba {
+    from {
+        top: 85%; /* Comienza fuera del contenedor */
+    }
+    to {
+        top: 15%; /* Termina arriba del contenedor */
+    }
+}
+
+.imagen-superpuesta2 {
+    position: absolute;
+    /* top: 100%; Inicialmente coloca la imagen fuera del contenedor */
+    /* left: 0;  */
+    height: 5000px;
+    width: 800px;
+    background-image: url('images/textura nievepng.png');
+    background-position-y: 360px;
+    background-size: contain;
+    /* background-repeat: repeat-y; */
+    background-repeat: no-repeat;
+    
+    animation: moverArriba 2s infinite linear; 
+    animation-fill-mode: forwards;
+    /* Animación para mover hacia arriba durante 2 segundos, repitiéndose infinitamente */
+}
+
+/* ////////////////////////////////////////////////////////////// */
 #player {
     height: 75px;
     width: 50px;
@@ -39,6 +103,10 @@
     background-repeat: no-repeat;
     z-index: 1;
 }
+
+
+
+
 
 /* .obstacles {
     height: 25px;
@@ -64,3 +132,12 @@
 
 }
 
+
+#barrier {
+    height: 15px;
+    width: 800px;
+    position: absolute;
+    display: flex;
+    top: 250px;
+    background-color: black;
+}
