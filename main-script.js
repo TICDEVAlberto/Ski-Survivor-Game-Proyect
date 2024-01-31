@@ -2,11 +2,11 @@
 import { Player } from "./player.js";
 import { Obstacles } from "./obstacles.js";
 
-
 // Const and variables
 var ski_pista = document.querySelector("#ski_pista")
 var player = new Player (390, 250, ski_pista)
 var playerId = null
+var barrierId = null 
 var obstacleId = null
 var obstacles = []
 
@@ -45,32 +45,24 @@ function playerAlive() {
 }
 
 window.addEventListener('keydown', function(e) {
- switch (e.key)  {
+    switch (e.key) {
         case "a":
-            player.direction = -1
-        break
         case "ArrowLeft":
-            player.direction = -1
-        break
-
+            player.direction = -1;
+            player.sprite.style.backgroundImage = "url('images/playerskiizquierda.png')";
+            break;
         case "d":
-            player.direction = 1
-        break
         case "ArrowRight":
-            player.direction = 1
-        break
+            player.direction = 1;
+            player.sprite.style.backgroundImage = "url('images/playerskiderecha.png')";
 
-        case " ":
-            player.jump()
+            break;
+      }
     }
 })
 
 window.addEventListener('keyup', function() {
     player.direction = 0
-})
-
-window.addEventListener("keyup", function(e) {
-
 })
  
 main()
