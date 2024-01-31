@@ -7,11 +7,8 @@ function Obstacles(x, y, parent, player, array) {
     this.sprite = document.createElement('div');
     this.direction = -1;
     this.speed = 10
-    this.zIndex = this.sprite.style.zIndex
-
  
     this.addObstacle = function() {
-        this.sprite.setAttribute('class', 'obstacles')
         this.sprite.setAttribute('id', 'arbol')
         this.sprite.style.left = this.x + "px"
         this.sprite.style.top = this.y + "px"
@@ -25,7 +22,7 @@ function Obstacles(x, y, parent, player, array) {
             self.y = newY;
             self.sprite.style.top = self.y + "px" 
         }
-        if (self.y <= 90) {
+        if (self.y <= 190) {
             parent.removeChild(self.sprite)
             clearInterval(self.timerId)
             array.shift()
