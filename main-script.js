@@ -17,7 +17,6 @@ function main() {
     player.addPlayer()
     playerId = setInterval(playerAlive, 50)
     obstacleId = setInterval(createObstacle, 1000)
-    //snowId = setInterval(createSnow, 1000)
 }
 
 
@@ -33,7 +32,7 @@ function createObstacle() {
     // obstacle.addObstacle()
     var coord = Math.floor(Math.random() *30) *25
     var obstacle = new Obstacles (coord, 750, ski_pista, player, obstacles)
-    console.log(coord)
+    // console.log(coord)
     obstacle.addObstacle()
     obstacles.push(obstacle)
 }

@@ -9,6 +9,7 @@ function Player(x, y, parent) {
     this.speed = 10
     this.dead = false
     this.zIndex = this.sprite.style.zIndex
+
  
     this.addPlayer = function() {
         this.sprite.setAttribute('id', 'player')
@@ -25,11 +26,14 @@ function Player(x, y, parent) {
         }
     };
 
-    this.jump = function() {
-        this.sprite.style.zIndex = 1
-        setTimeout(5000)
-        this.sprite.style.zIndex = 2
-    }
+    // this.jump = function() {
+    //     this.sprite.style.zIndex = 1
+    //     this.isJumping = true
+    //     console.log("toy saltando")
+    //     setTimeout(10000)
+    //     this.isJumping = false
+    //     this.sprite.style.zIndex = 2
+    // }
 }
 
 export { Player };
