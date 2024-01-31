@@ -59,7 +59,7 @@ window.addEventListener('keydown', function(e) {
             break;
       }
     }
-})
+)
 
 window.addEventListener('keyup', function() {
     player.direction = 0
