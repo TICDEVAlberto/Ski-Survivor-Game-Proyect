@@ -35,7 +35,7 @@ function Obstacles(x, y, parent, player, array) {
     if (this.x < player.x + player.width && 
         this.y < player.y + player.height &&
         this.x + this.width > player.x && 
-        this.y + this.height > player.y && this.zIndex === player.zIndex) 
+        this.y + this.height > player.y && player.isJumping === flase)
         {
             player.dead = true
             window.alert("CRASHED!")

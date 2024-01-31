@@ -15,7 +15,7 @@ var obstacles = []
 function main() {
     player.addPlayer()
     playerId = setInterval(playerAlive, 50)
-    enemyId = setInterval(createObstacle, 1000)
+    obstacleId = setInterval(createObstacle, 1000)
 }
 
 
@@ -26,7 +26,7 @@ function createObstacle() {
     // obstacle.addObstacle()
     var coord = Math.floor(Math.random() *30) *25
     var obstacle = new Obstacles (coord, 750, ski_pista, player, obstacles)
-    console.log(coord)
+    // console.log(coord)
     obstacle.addObstacle()
     obstacles.push(obstacle)
 }
@@ -59,9 +59,6 @@ window.addEventListener('keydown', function(e) {
         case "ArrowRight":
             player.direction = 1
         break
-
-        case " ":
-            player.jump()
     }
 })
 
@@ -69,8 +66,8 @@ window.addEventListener('keyup', function() {
     player.direction = 0
 })
 
-window.addEventListener("keyup", function(e) {
+// window.addEventListener("keyup", function(e) {
 
-})
+// })
  
 main()
