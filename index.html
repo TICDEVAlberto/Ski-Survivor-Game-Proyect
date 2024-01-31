@@ -8,13 +8,21 @@
         <script src="main-script.js" type="module" defer></script>
     </head>
     <body>
-        <div id="ski_pista">
-            <div id="horizonte"></div>
-            <div class="imagen-fondo"></div>
-            <div class="imagen-superpuesta"></div>
-            <div id="gameOver">
-                <button id = "reset" class="boton">TRY AGAIN</button>
-            </div>
+        <div id="start">
+            <button id="start-boton">PRESS TO START</button>
+        </div>
+
+            <div id="ski_pista">
+                <div id="scoreboard">
+                    <span>SCORE</span>
+                    <span id="score">0</span>
+                </div>
+                <div id="horizonte"></div>
+                <div class="imagen-fondo"></div>
+                <div class="imagen-superpuesta"></div>
+                <div id="gameOver">
+                    <button id = "reset" class="boton">TRY AGAIN</button>
+                </div>
         </div>
     </body>
 </html>

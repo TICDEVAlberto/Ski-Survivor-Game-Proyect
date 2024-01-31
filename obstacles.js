@@ -1,3 +1,4 @@
+
 function Obstacles(x, y, parent, player, array) {
     var self = this;
     this.x = x;
@@ -33,7 +34,7 @@ function Obstacles(x, y, parent, player, array) {
     if (this.x < player.x + player.width && 
         this.y < player.y + player.height &&
         this.x + this.width > player.x && 
-        this.y + this.height > player.y)
+        this.y + this.height > player.y) 
         {
             player.dead = true
             document.querySelector("#gameOver").style.visibility = "visible"

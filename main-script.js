@@ -1,7 +1,6 @@
 // IMPORTS
 import { Player } from "./player.js";
 import { Obstacles } from "./obstacles.js";
-//import { Snow } from "./snow.js";
 
 
 // Const and variables
@@ -11,28 +10,28 @@ var playerId = null
 var obstacleId = null
 var scoreId = null
 var obstacles = []
+var score = 0
+var scoreSpan = document.getElementById("score") 
 
+console.log(score)
 
 
 // main function
+
 function main() {
     player.addPlayer()
     playerId = setInterval(playerAlive, 50)
     obstacleId = setInterval(createObstacle, 1000)
-    scoreId = setInterval(addScore, 1000)
+    scoreId = setInterval(addScore, 1100)
 }
 
 
 // Functions
 
-let refresh = document.getElementById("reset");
-refresh.addEventListener('click', _ => {
-            location.reload();
-})
 
 function createObstacle() {
     var coord = Math.floor(Math.random() *30) *25
-    var obstacle = new Obstacles (coord, 750, ski_pista, player, obstacles)
+    var obstacle = new Obstacles (coord, 750, ski_pista, player, obstacles, scoreId)
     obstacle.addObstacle()
     obstacles.push(obstacle)
 }
@@ -46,28 +45,58 @@ function playerAlive() {
         obstacles.forEach(function(obstacle) {
             clearInterval(obstacle.timerId)
             checkScore()
+            clearInterval(scoreId)
         })
     }
 }
 
+let gameStart = document.getElementById("start-boton");
+window.addEventListener('click', _ => {
+    document.querySelector("#start").style.visibility = "hidden"
+    main()
+})
+
+let refresh = document.getElementById("reset");
+refresh.addEventListener('click', _ => {
+            location.reload();
+})
+
+window.addEventListener('keydown', function(e) {
+    switch (e.key) {
+        case "a":
+        case "ArrowLeft":
+            player.direction = -1;
+            player.sprite.style.backgroundImage = "url('images/playerskiizquierda.png')";
+            break;
+        case "d":
+        case "ArrowRight":
+            player.direction = 1;
+            player.sprite.style.backgroundImage = "url('images/playerskiderecha.png')";
+            break;
+      }
+})
+
 function addScore() {
-    player.score += 1
-    console.log(player.score)
+    score += 1
+    scoreSpan.innerText = score
 }
 
 function checkScore() {
-    if (player.score >= 3600) {
-        player.score = (player.score / 60) / 60
-        console.log(`Horas ${Math.round(player.score)}`)
+    if (score >= 3600) {
+        score = (score / 60) / 60
+        scoreSpan.innerText = `${Math.round(score)} Horas`
+        // console.log(`Horas ${Math.round(score)}`)
     }
 
-    else if (player.score >= 60 && player.score < 3600) {
-        player.score = player.score / 60
-        console.log(`Minutos ${Math.round(player.score)}`)
+    else if (score >= 60 && score < 3600) {
+        score = score / 60
+        scoreSpan.innerText = `${Math.round(score)} Minutos`
+        //console.log(`Minutos ${Math.round(score)}`)
     }
 
     else {
-        console.log(`Segundos ${player.score}`)
+        scoreSpan.innerText = `${Math.round(score)} Segundos`
+        //console.log(`Segundos ${score}`)
     }
 }
 
@@ -92,5 +121,5 @@ window.addEventListener('keydown', function(e) {
 window.addEventListener('keyup', function() {
     player.direction = 0
 })
- 
-main()
+
+export{scoreId}
