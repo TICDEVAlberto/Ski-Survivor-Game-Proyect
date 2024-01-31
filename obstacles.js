@@ -36,7 +36,8 @@ function Obstacles(x, y, parent, player, array) {
         this.y + this.height > player.y)
         {
             player.dead = true
-            window.alert("CRASHED!")
+            document.querySelector("#gameOver").style.visibility = "visible"
+           
         }
     }
 

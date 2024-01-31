@@ -1,6 +1,7 @@
 // IMPORTS
 import { Player } from "./player.js";
 import { Obstacles } from "./obstacles.js";
+//import { Snow } from "./snow.js";
 
 
 // Const and variables
@@ -10,6 +11,7 @@ var playerId = null
 var obstacleId = null
 var scoreId = null
 var obstacles = []
+
 
 
 // main function
@@ -22,6 +24,11 @@ function main() {
 
 
 // Functions
+
+let refresh = document.getElementById("reset");
+refresh.addEventListener('click', _ => {
+            location.reload();
+})
 
 function createObstacle() {
     var coord = Math.floor(Math.random() *30) *25
