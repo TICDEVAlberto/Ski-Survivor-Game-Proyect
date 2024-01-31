@@ -23,11 +23,6 @@ function main() {
 
 // Functions
 
-function addScore() {
-    player.score += 1
-    console.log(player.score)
-}
-
 function createObstacle() {
     var coord = Math.floor(Math.random() *30) *25
     var obstacle = new Obstacles (coord, 750, ski_pista, player, obstacles)
@@ -43,8 +38,29 @@ function playerAlive() {
         clearInterval(obstacleId)
         obstacles.forEach(function(obstacle) {
             clearInterval(obstacle.timerId)
-            
+            checkScore()
         })
+    }
+}
+
+function addScore() {
+    player.score += 1
+    console.log(player.score)
+}
+
+function checkScore() {
+    if (player.score >= 3600) {
+        player.score = (player.score / 60) / 60
+        console.log(`Horas ${Math.round(player.score)}`)
+    }
+
+    else if (player.score >= 60 && player.score < 3600) {
+        player.score = player.score / 60
+        console.log(`Minutos ${Math.round(player.score)}`)
+    }
+
+    else {
+        console.log(`Segundos ${player.score}`)
     }
 }
 

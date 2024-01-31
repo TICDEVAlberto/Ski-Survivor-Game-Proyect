@@ -29,23 +29,6 @@ function Obstacles(x, y, parent, player, array) {
         }
     };
 
-    this.checkScore = function() {
-        if (player.score >= 3600) {
-            player.score = (player.score / 60) / 60
-            console.log(`Horas ${Math.round(player.score)}`)
-        }
-
-        else if (player.score >= 60 && player.score < 3600) {
-            player.score = player.score / 60
-            console.log(`Minutos ${Math.round(player.score)}`)
-        }
-
-        else {
-            console.log(`Segundos ${player.score}`)
-        }
-
-    }
-
     this.checkCollision = function() {
     if (this.x < player.x + player.width && 
         this.y < player.y + player.height &&
@@ -54,7 +37,6 @@ function Obstacles(x, y, parent, player, array) {
         {
             player.dead = true
             window.alert("CRASHED!")
-            this.checkScore()
         }
     }
 
