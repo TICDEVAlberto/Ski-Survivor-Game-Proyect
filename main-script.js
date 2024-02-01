@@ -85,18 +85,15 @@ function checkScore() {
     if (score >= 3600) {
         score = (score / 60) / 60
         scoreSpan.innerText = `${Math.round(score)} Horas`
-        // console.log(`Horas ${Math.round(score)}`)
     }
 
     else if (score >= 60 && score < 3600) {
         score = score / 60
         scoreSpan.innerText = `${Math.round(score)} Minutos`
-        //console.log(`Minutos ${Math.round(score)}`)
     }
 
     else {
         scoreSpan.innerText = `${Math.round(score)} Segundos`
-        //console.log(`Segundos ${score}`)
     }
 }
 
