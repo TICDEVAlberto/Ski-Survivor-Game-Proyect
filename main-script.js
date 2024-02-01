@@ -51,8 +51,8 @@ function playerAlive() {
 }
 
 let gameStart = document.getElementById("start-boton");
-window.addEventListener('click', _ => {
-    document.querySelector("#start").style.visibility = "hidden"
+gameStart.addEventListener('click', _ => {
+    document.querySelector(".start-screen").style.visibility = "hidden"
     main()
 })
 
