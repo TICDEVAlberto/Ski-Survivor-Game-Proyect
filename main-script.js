@@ -82,18 +82,19 @@ function addScore() {
 }
 
 function checkScore() {
+    let myScore = score
     if (score >= 3600) {
-        score = (score / 60) / 60
-        scoreSpan.innerText = `${Math.round(score)} Horas`
+        myScore = (score / 60) / 60
+        scoreSpan.innerText = `${Math.round(myScore)} Horas`
     }
 
     else if (score >= 60 && score < 3600) {
-        score = score / 60
-        scoreSpan.innerText = `${Math.round(score)} Minutos`
+        myScore = score / 60
+        scoreSpan.innerText = `${Math.round(myScore)} Minutos`
     }
 
     else {
-        scoreSpan.innerText = `${Math.round(score)} Segundos`
+        scoreSpan.innerText = `${Math.round(myScore)} Segundos`
     }
 }
 
